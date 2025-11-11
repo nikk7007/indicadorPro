@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+    outline: none;
+}
+
+:root {
+  /* ===== Cores de Base ===== */
+  --color-bg: #F5F7FA;          /* Fundo geral */
+  --color-surface: #FFFFFF;     /* Cards e painéis */
+  --color-border: #E0E0E0;      /* Linhas e divisores */
+  --color-text: #2E2E2E;        /* Texto principal */
+  --color-text-header: #E3F2FD;        /* Texto header */
+
+  /* ===== Cores de Marca ===== */
+  --color-primary: #1976D2;     /* Azul principal (marca) */
+  --color-primary-light: #1E88E5;
+  --color-primary-dark: #1565C0;
+
+  /* ===== Cores de Ação ===== */
+  --color-accent: #43A047;      /* Verde - ações positivas */
+  --color-accent-light: #66BB6A;
+  --color-accent-dark: #2E7D32;
+
+  /* ===== Cores de Status ===== */
+  --color-success: #43A047;     /* Dentro da meta */
+  --color-warning: #FBC02D;     /* Atenção */
+  --color-error: #E53935;       /* Fora da meta */
+
+  /* ===== Efeitos ===== */
+  --shadow-card: 0 .5em 1em rgba(0, 0, 0, 0.08);
+  --radius-card: calc(3em/4);
+  --transition: cubic-bezier(0.83, 0, 0.17, 1);
+
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+header {
+    padding: 1rem 4rem;
+    background-color: var(--color-primary-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-header);
+    
+    & h1 {
+        color: var(--color-surface);
+    }
+    
+}
+
+nav ul {
+    display: flex;
+    gap: 1em;
+    
+    & li, a {
+        list-style: none;
+        text-decoration: none;
+        color: var(--color-text-header);
+        font-weight: 600;
+
+        &:hover {
+            color: var(--color-surface);
+        }
+    }
+}
+
+main {
+    min-height: 80vh;
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Usuais */
+
+.card {
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-card);
+}
+
+.card section.head{
+    padding: 1em;
+    text-align: center;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.card section.body{
+    padding: 1em;
+    text-align: center;
+
+    & button {
+        width: 100%;
+    }
+}
+
+.error {
+    font-weight: 800;
+    color: var(--color-error);
+}
+
+.success {
+    font-weight: 600;
+    color: var(--color-success);
+}
+
+a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+.clickable {                                                   
+    transition: var(--transition);
+}
+
+.clickable:hover {
+    scale: 1.05;
+}
+
+.clickable:active {
+    scale: .95;
+}
+
+button {
+  --c1: var(--color-bg);
+  --c2: var(--color-primary);
+  --size-letter: 1.2rem;
+
+  padding: .5em 1em;
+  font-size: var(--size-letter);
+  
+  background-color: var(--c2);
+  border: calc(var(--size-letter) / 6) solid var(--c2);
+  border-radius: .2em;
+  cursor: pointer;
+  
+  overflow: hidden;
+  position: relative;
+  transition: 200ms var(--transition);
+
+  & > span {
+    font-weight: 700;
+    color: var(--c1);
+    position: relative;
+    z-index: 1;
+    transition: color 700ms var(--transition);
+  }
+}
+
+button:hover {
+    scale: 1.02;
+  & > span {
+    color: var(--c1);
+  }
+}
+
+button:active {
+  scale: .98;
+  filter: brightness(0.9);
+}
+
+input, select{
+    padding: 0.8em 1em;
+    border: 2px solid var(--color-border);
+    background-color: var(--color-bg);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 500ms ease;
+}
+
+:is(input, select):focus {
+    border-color: var(--color-primary);
+}
+
+select{
+    cursor: pointer;
+}
+select:focus {
+    border-radius: .5em .5em 0 0;
+}

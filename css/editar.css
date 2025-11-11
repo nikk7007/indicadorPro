@@ -1,0 +1,25 @@
+main#edit {
+    gap: 1em;
+    align-items: flex-start;
+}
+
+#edit section.body table{
+    border-collapse: collapse;
+
+    & :is(th,td) {
+        padding: 0.5em;
+    }
+
+    & td a {
+        text-decoration: none;
+    }
+
+    & td a img {
+        height: 1em;
+    }
+}
+
+#add-indicador button {
+    --c2: var(--color-accent);
+}
+

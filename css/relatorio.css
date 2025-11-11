@@ -1,0 +1,16 @@
+#report {
+    gap: 1em;
+}
+
+#report-generator .body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    & div {
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

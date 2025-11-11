@@ -1,0 +1,21 @@
+:is(#signup, #login) {
+    flex-direction: column;
+    gap: 1em;
+}
+
+:is(#signup, #login) form {
+    padding: 2rem;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-card);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    box-shadow:  var(--shadow-card);
+
+    & h2 {
+        font-weight: 800;
+        font-size: 2rem;
+        color: var(--color-primary-dark);
+    }
+}

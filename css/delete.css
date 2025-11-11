@@ -1,0 +1,13 @@
+#delete .body > div.act {
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
+
+    & :first-child {
+        --c2: var(--color-primary-light);
+    }
+
+    & :last-child {
+        --c2: var(--color-accent-light);
+    }
+}

@@ -1,0 +1,69 @@
+#viewer {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+#viewer > section.card {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+
+#viewer > section.card table {
+    border-collapse: collapse;
+
+    /* Primeira linha */
+    & tr:first-child {
+        color: var(--color-primary);
+    }
+
+    /* Linhas do meio */
+    & tr:not(:first-child, :last-child) {
+        border-bottom: 2px solid var(--color-border);
+    }
+
+    /* Celulas */
+    & :is(th, td) {
+        padding: .8em;
+    }
+
+    & th {
+        padding-bottom: 1em;
+    }
+
+    & input {
+        padding: .3em;
+        max-width: 120px;
+        border: none;
+        border-bottom: 2px solid var(--color-border);
+        border-radius: 0;
+        background-color: transparent;
+        /* color: var; */
+        appearance: none;
+    }
+}
+
+
+#viewer > section.card a:first-child{
+    scale: -1;
+}
+
+#viewer > section.buttons {
+    width: 100%;
+
+    display: flex;
+    gap: .5em;
+    justify-content: stretch;
+
+    & button {
+        width: 100%;
+    }
+
+    & button:last-child {
+        width: 50%;
+        --c2: var(--color-accent);
+    }
+}
