@@ -154,6 +154,12 @@ function saveInfos($data_id, $val, $user_id) {
     $stmt->close();
 
     if(!$response) return 0;
+    if ($response['unit'] == 'real') {
+        var_dump($val);
+        $val = (float)$val * 100;
+        $val = intval(round($val));
+
+    }
 
     $stmt = $mysqli->prepare("UPDATE data SET value = ? WHERE id = ?");
     $stmt->bind_param("ii", $val, $data_id);

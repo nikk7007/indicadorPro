@@ -97,6 +97,7 @@ if (isset($_POST['add'])) {
                             if ($row['unit'] == 'porcentagem') echo "selected"
                             ?>
                             >%</option>
+                            <option value="unidade">Un</option>
                         </select>
                     </td>
                 </tr>
@@ -125,6 +126,7 @@ if (isset($_POST['add'])) {
                         <select name="novoIndicadorUn">
                             <option value="real">R$</option>
                             <option value="porcentagem">%</option>
+                            <option value="unidade">Un</option>
                         </select>
                     </td>
                 </tr>

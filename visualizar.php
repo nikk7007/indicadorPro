@@ -13,14 +13,11 @@ include 'config/funcs.php';
 prepareRegistros($_SESSION['id']);
 
 if (count($_POST) > 0) {
-    var_dump($_POST);
     foreach($_POST as $id => $val) {
         $val = trim($val);
         $val = str_replace(['R$', ' ', '.'], '', $val);
         $val = str_replace(',', '.', $val);
-        $centavos = (float)$val * 100;
-        $centavos = intval(round($centavos));
-        saveInfos($id, $centavos, $_SESSION['id']);
+        saveInfos($id, $val, $_SESSION['id']);
     }
 }
 
@@ -29,8 +26,7 @@ $edit_date = date("Y-m-d",time());
 if (isset($_GET['date']) && intval($_GET['date']) > 0) {
     $edit_date = date("Y-m-d", time() - $_GET['date'] * $oneDay);
 }
-$data = getData($_SESSION['id'], $edit_date, 5);
-
+$data = getData($_SESSION['id'], $edit_date, 7);
 ?>
 
 <main>
@@ -81,7 +77,8 @@ $data = getData($_SESSION['id'], $edit_date, 5);
 
                         echo "<td>";
                         if ($unit == "real") echo "R$" . contabilNum($v);
-                        if ($unit == "porcentagem") echo $v."%";
+                        else echo $v;
+                        if ($unit == "porcentagem") echo "%";
                         echo "</td>";
                     }
                     ?>

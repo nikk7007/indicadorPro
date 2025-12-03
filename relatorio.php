@@ -26,7 +26,7 @@ if (!isset($_SESSION['id'])) {
                 <label for="">Data final</label>
                 <input type="date" name="end">
             </div>
-            <a href="">Relatorio gerado com sucesso</a>
+            <!-- <a href="">Relatorio gerado com sucesso</a> -->
             <button type="submit"><span>Gerar</span></button>
         </section>
     </form>
